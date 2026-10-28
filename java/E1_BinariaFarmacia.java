@@ -41,7 +41,7 @@ class CategoriaFarmacia {
 
     // Operación 3: Recorrer y listar la colección
     public void listarMedicamentos() {
-        System.out.println("Categoría Terapéutica: " + nombreCategoria);
+        System.out.println("Categoría: " + nombreCategoria);
         for (Medicamento m : medicamentos) {
             System.out.println("  -> " + m.getDetalle());
         }

@@ -28,7 +28,7 @@ class CategoriaFarmacia:
 
     # 3. Método para recorrer la colección y mostrar los elementos
     def listar_medicamentos(self) -> None:
-        print(f"Categoría Terapéutica: {self.__nombre_categoria}")
+        print(f"Categoría : {self.__nombre_categoria}")
         for m in self.__medicamentos:
             print(f"  -> {m.get_detalle()}")
         print(f"Total de medicamentos registrados: {self.contar_medicamentos()}")
