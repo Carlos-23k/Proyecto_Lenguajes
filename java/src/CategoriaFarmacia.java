@@ -13,7 +13,7 @@ class CategoriaFarmacia {
     }
 
     // Operación 1: Agregar a la colección
-    public void agregarMedicamento(Medicamento med) {
+    public void agregarFarmaco(Medicamento med) {
         this.medicamentos.add(med);
     }
 
