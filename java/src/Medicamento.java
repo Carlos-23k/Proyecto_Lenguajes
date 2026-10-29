@@ -38,18 +38,15 @@ public class Medicamento {
     }
 
     public String mostrarMedicamento(){
-        return "[" + getCodigo() + "]: " + getNombre() + " | - S/ " +"Subtotal: " + String.format("%.2f", this.calularSubTotal());
+        return "[" + getCodigo() + "]: " + getNombre() + " | " +"Subtotal: S/" + String.format("%.2f", this.calularSubTotal());
 
     }
 
-    
     public Double calularSubTotal(){
         if(getCantidad() > 0){
             return getPrecio() * getCantidad();
         }
         return 0.0;
     }
-        
-
-    
+          
 }

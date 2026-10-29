@@ -9,7 +9,8 @@ class Medicamento:
     # Método que retorna el detalle formateado del fármaco
     def get_detalle(self) -> str:
         return f"[{self.__codigo}] {self.__nombre} - S/ {self.__precio:.2f}"
-
+    
+    # Metodos Getters
     def get_codigo(self):
         return self.__codigo
 

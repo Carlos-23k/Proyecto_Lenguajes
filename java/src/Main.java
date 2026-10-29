@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-         System.out.println("EJECUCIÓN: RELACIÓN BINARIA - EQUIPO N°2");
+        System.out.println("EJECUCIÓN: RELACIÓN BINARIA - EQUIPO N°2");
 
         CategoriaFarmacia analgesicos = new CategoriaFarmacia("Analgésicos y Antiinflamatorios");
 
@@ -14,6 +14,13 @@ public class Main {
         analgesicos.agregarMedicamento(m3);
 
         analgesicos.listarMedicamentos();
+
+        Venta venta = new Venta("N-023");
+
+        venta.agregarMedicamento("P-025", "Panadol Antigripal", 3.00, 2);
+        venta.mostrarVenta();
+
+
         
     }
 }

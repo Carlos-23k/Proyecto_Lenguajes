@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+// Relacion de composición
 public class Venta {
     private String nVenta;
     private List<Medicamento> medicamentos;
@@ -28,7 +30,7 @@ public class Venta {
             total = total + med.calularSubTotal();
         }
         System.out.println("-------------------------------");
-        System.out.println("TOTAL A PAGAR:    " + String.format("%.2f", total));
+        System.out.println("TOTAL A PAGAR:    S/" +  String.format("%.2f", total));
         System.out.println("-------------------------------");
         
     }
