@@ -1,14 +1,35 @@
-
 class Medicamento:
-    def __init__(self, codigo: str, nombre: str, precio: float):
+    def __init__(self, codigo: str, nombre: str, precio: float, cantidad = 0):
         # Atributos privados del medicamento
         self.__codigo = codigo
         self.__nombre = nombre
         self.__precio = precio
+        self.__cantidad = cantidad
 
     # Método que retorna el detalle formateado del fármaco
     def get_detalle(self) -> str:
         return f"[{self.__codigo}] {self.__nombre} - S/ {self.__precio:.2f}"
+
+    def get_codigo(self):
+        return self.__codigo
+
+    def get_nombre(self):
+        return self.__nombre
+
+    def get_precio(self):
+        return self.__precio
+
+    def get_cantidad(self):
+        return self.__cantidad
+
+    def calularSubTotal(self):
+        if(self.cantidad > 0):
+            return self.__precio * self.__cantidad
+        else:
+            return 0.0
+
+    def mostrarMedicamento(self):
+            print(f"{self.get_codigo()}: {self.get_nombre()} | cant: {self.get_cantidad()} | subtotal: S/{self.calularSubTotal():,.2f} ")
 
 
 # Clase principal que administra la lista
