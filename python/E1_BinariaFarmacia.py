@@ -6,10 +6,6 @@ class Medicamento:
         self.__precio = precio
         self.__cantidad = cantidad
 
-    # Método que retorna el detalle formateado del fármaco
-    def get_detalle(self) -> str:
-        return f"[{self.__codigo}] {self.__nombre} - S/ {self.__precio:.2f}"
-    
     # Metodos Getters
     @property
     def codigo(self): return self.__codigo
@@ -28,6 +24,10 @@ class Medicamento:
             return self.__precio * self.__cantidad
         else:
             return 0.0
+
+# Método que retorna el detalle formateado del fármaco
+    def get_detalle(self) -> str:
+        return f"[{self.__codigo}] {self.__nombre} - S/ {self.__precio:.2f}"    
 
     def mostrarMedicamento(self):
             print(f"{self.__codigo()}: {self.__nombre()} | cant: {self.__cantidad()} | subtotal: S/{self.calularSubTotal():,.2f} ")

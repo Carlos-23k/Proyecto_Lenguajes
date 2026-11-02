@@ -12,7 +12,7 @@ class Venta {
     }
 
     public String getnVenta(){
-        return this.nVenta;
+        return nVenta;
     }
 
     public void agregarMedicamento(String codigo, String nombre, double precio, int cantidad){

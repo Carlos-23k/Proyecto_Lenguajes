@@ -1,55 +1,74 @@
-/**
- * E3_Agregacion
- */
+//E3_Agregacion
 import java.util.ArrayList;
 import java.util.List;
 
-// Relación reflexiva: la clase se asocia consigo misma
-class PersonalFarmacia {
+class CategoriaFarmacia {
+    private String nombreCategoria;
+    private List<Medicamento> medicamentos;
+
+    public CategoriaFarmacia(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+        // Instanciación obligatoria de la colección para evitar NullPointerException
+        this.medicamentos = new ArrayList<>();
+    }
+
+    // Operación 1: Agregar a la colección
+    public void agregarFarmaco(Medicamento med) {
+        this.medicamentos.add(med);
+    }
+
+    // Operación 2: Contar elementos de la colección
+    public int contarMedicamentos() {
+        return this.medicamentos.size();
+    }
+
+    // Operación 3: Recorrer y listar la colección
+    public void listarMedicamentos() {
+        System.out.println("Categoría: " + nombreCategoria);
+        for (Medicamento m : medicamentos) {
+            System.out.println("  -> " + m.getDetalle());
+        }
+        System.out.println("Total de medicamentos en la categoría: " + contarMedicamentos());
+    }
+}  
+
+    // Clase pincipal "Muchos" (0..*)
+class Medicamento {
+    private String codigo;
     private String nombre;
-    private String cargo;
-    private PersonalFarmacia supervisor;           // Sentido 1: Multiplicidad 0..1
-    private List<PersonalFarmacia> subordinados;   // Sentido 2: Multiplicidad 0..*
+    private double precio;
+    private int cantidad;
 
-    public PersonalFarmacia(String nombre, String cargo) {
+    public Medicamento(String codigo, String nombre, double precio, int cantidad) {
+        this.codigo = codigo;
         this.nombre = nombre;
-        this.cargo = cargo;
-        this.supervisor = null; // No tiene jefe si es el quimico titular (0..1)
-        this.subordinados = new ArrayList<>();
+        this.precio = precio;
+        this.cantidad = cantidad;
     }
 
-    public String getNombre() { return nombre; }
-    public String getCargo() { return cargo; }
-
-    // Sincroniza la relación reflexiva en ambos sentidos
-    public void asignarSubordinado(PersonalFarmacia tecnico) {
-        this.subordinados.add(tecnico);
-        tecnico.supervisor = this;
+    public Medicamento(String codigo, String nombre, double precio){
+        this(codigo,nombre, precio, 0);
     }
 
-    // Demuestra la relación en los dos sentidos
-    public void mostrarEnAmbosSentidos() {
-        System.out.println("--------------------------------------------------");
-        System.out.println("Personal: " + nombre + " [" + cargo + "]");
+    public String getCodigo(){ return codigo; }
+    public String getNombre(){ return nombre; }
+    public double getPrecio(){ return precio; }
+    public int getCantidad(){ return cantidad;}
 
-        // Sentido 1: De Subordinado hacia Supervisor (0..1)
-        if (supervisor != null) {
-            System.out.println("  -> [Sentido Subordinado -> Jefe] Supervisado por: " 
-                               + supervisor.getNombre() + " (" + supervisor.getCargo() + ")");
-        } else {
-            System.out.println("  -> [Sentido Subordinado -> Jefe] No tiene supervisor (Es Jefe de Turno).");
+    public String getDetalle() {
+        return "[" + getCodigo() + "] " + getNombre() + " - S/ " + String.format("%.2f", getPrecio());
+    }
+
+    public String mostrarMedicamento(){
+        return "[" + getCodigo() + "]: " + getNombre() + " | " +"Subtotal: S/" + String.format("%.2f", this.calularSubTotal());
+    }
+
+    public Double calularSubTotal(){
+        if(getCantidad() > 0){
+            return getPrecio() * getCantidad();
         }
-
-        // Sentido 2: De Supervisor hacia su colección de Subordinados (0..*)
-        if (!subordinados.isEmpty()) {
-            System.out.println("  -> [Sentido Jefe -> Subordinados] Supervisa a " + subordinados.size() + " persona(s):");
-            for (PersonalFarmacia sub : subordinados) {
-                System.out.println("       * " + sub.getNombre() + " (" + sub.getCargo() + ")");
-            }
-        } else {
-            System.out.println("  -> [Sentido Jefe -> Subordinados] No tiene personal subordinado a su cargo.");
-        }
-    }
+        return 0.0;
+    }       
 }
 
 // ===========================================================
@@ -60,14 +79,14 @@ public class E3_AgregacionFarmacia {
         
         System.out.println("EJECUCIÓN: RELACIÓN DE AGREGACIÓN - EQUIPO N°2");
 
-        PersonalFarmacia encargada = new PersonalFarmacia("Dra. Maria Sanchéz Polo", "Químico Farmacéutico Titular");
-        PersonalFarmacia tecnico = new PersonalFarmacia("Luis Gomez", "Técnico en Farmacia - Dispensación");
-        PersonalFarmacia tecnica = new PersonalFarmacia("Elena Torres", "Técnica en Farmacia - Almacén");
-        
-        encargada.asignarSubordinado(tecnico);
-        encargada.asignarSubordinado(tecnica);
-        encargada.mostrarEnAmbosSentidos();
-        tecnico.mostrarEnAmbosSentidos();
-        tecnica.mostrarEnAmbosSentidos();
+        CategoriaFarmacia analgesicos = new CategoriaFarmacia("Antihistamínicos(Alergias y Congestión)");
+        Medicamento m1 = new Medicamento("MED-005", "Cetirizina (10mg)", 0.50);
+        Medicamento m2 = new Medicamento("MED-006", "Fexofenadina (120 mg)", 1.80);
+        Medicamento m3 = new Medicamento("MED-007", "Clorfenamina (4 mg)", 1.00);
+
+        analgesicos.agregarFarmaco(m1);
+        analgesicos.agregarFarmaco(m2);
+        analgesicos.agregarFarmaco(m3);
+        analgesicos.listarMedicamentos();      
     }  
 }
