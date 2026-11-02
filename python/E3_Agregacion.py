@@ -58,7 +58,7 @@ class CategoriaFarmacia:
 ## =============================
 if __name__ == "__main__":
     # Impresión obligatoria con el nombre del equipo
-    print("EJECUCIÓN: RELACIÓN BINARIA  - EQUIPO: N°2")
+    print("EJECUCIÓN: RELACIÓN DE AGREGACIÓN  - EQUIPO: N°2")
 
     # Instancia de la categoría (Lado 1)
     analgesicos = CategoriaFarmacia("Analgésicos y Antiinflamatorios")
