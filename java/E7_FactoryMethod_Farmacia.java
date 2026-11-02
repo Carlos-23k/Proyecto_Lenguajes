@@ -85,8 +85,6 @@ class MedicamentoControlado extends MedicamentoFarmaceutico {
         System.out.println("Requiere receta medica.");
     }
 }
-
-
 // ======================================
 // CREADOR ABSTRACTO
 // ======================================
@@ -97,13 +95,11 @@ abstract class CreadorMedicamentos {
             String tipo, String codigo, String nombre, double precio);
 }
 
-
 // ======================================
 // FACTORY METHOD
 // ======================================
 
 class FarmaciaFactory extends CreadorMedicamentos {
-
     @Override
     public MedicamentoFarmaceutico crearMedicamento(
             String tipo, String codigo, String nombre, double precio) {
@@ -127,12 +123,11 @@ class FarmaciaFactory extends CreadorMedicamentos {
 }
 
 
-// ======================================
-// PROGRAMA PRINCIPAL
-// ======================================
+// ===========================================================
+// PROGRAMA PRINCIPAL QUE IMPRIME EL FUNCIONAMIENTO EN CONSOLA
+// ===========================================================
 
 public class E7_FactoryMethod_Farmacia {
-
     public static void main(String[] args) {
 
         System.out.println("==================================");

@@ -36,7 +36,9 @@ class RegistroOperacionesFarmacia:
         print("Total de operaciones:", len(self.__operaciones))
 
 
-# PROGRAMA PRINCIPAL
+## =============================
+## BLOQUE PRINCIPAL DE EJECUCIÓN
+## =============================
 if __name__ == "__main__":
 
     print("======================================")

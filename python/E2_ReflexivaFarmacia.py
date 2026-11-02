@@ -8,11 +8,11 @@ class PersonalFarmacia:
         # Lista de objetos de la misma clase para el rol subordinados (0..*)
         self.__subordinados: list["PersonalFarmacia"] = []
 
-    def get_nombre(self) -> str:
-        return self.__nombre
-
-    def get_cargo(self) -> str:
-        return self.__cargo
+    # Metodos Getters    
+    @property
+    def nombre(self) -> str: return self.__nombre
+    @property
+    def cargo(self) -> str: return self.__cargo
 
     # Método que registra la relación reflexiva en ambos sentidos
     def asignar_subordinado(self, tecnico: "PersonalFarmacia") -> None:
@@ -27,7 +27,7 @@ class PersonalFarmacia:
         # Sentido 1: De Subordinado hacia su Jefe (0..1)
         if self.__supervisor is not None:
             print(f"  -> [Sentido Subordinado -> Jefe] Supervisado por: "
-                  f"{self.__supervisor.get_nombre()} ({self.__supervisor.get_cargo()})")
+                  f"{self.__supervisor.nombre} ({self.__supervisor.cargo})")
         else:
             print("  -> [Sentido Subordinado -> Jefe] Sin supervisor (Es Jefe de Turno).")
 
@@ -35,12 +35,14 @@ class PersonalFarmacia:
         if len(self.__subordinados) > 0:
             print(f"  -> [Sentido Jefe -> Subordinados] Supervisa a {len(self.__subordinados)} persona(s):")
             for sub in self.__subordinados:
-                print(f"       * {sub.get_nombre()} ({sub.get_cargo()})")
+                print(f"       * {sub.nombre} ({sub.cargo})")
         else:
             print("  -> [Sentido Jefe -> Subordinados] No tiene personal subordinado a su cargo.")
 
 
-# Bloque principal de ejecución
+## =============================
+## BLOQUE PRINCIPAL DE EJECUCIÓN
+## =============================
 if __name__ == "__main__":
    
     print("EJECUCIÓN: RELACIÓN REFLEXIVA - EQUIPO: N°2")

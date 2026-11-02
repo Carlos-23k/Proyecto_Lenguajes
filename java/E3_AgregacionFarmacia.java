@@ -1,3 +1,6 @@
+/**
+ * E3_Agregacion
+ */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,4 +50,24 @@ class PersonalFarmacia {
             System.out.println("  -> [Sentido Jefe -> Subordinados] No tiene personal subordinado a su cargo.");
         }
     }
+}
+
+// ===========================================================
+// PROGRAMA PRINCIPAL QUE IMPRIME EL FUNCIONAMIENTO EN CONSOLA
+// ===========================================================
+public class E3_AgregacionFarmacia {
+    public static void main(String[] args) {
+        
+        System.out.println("EJECUCIÓN: RELACIÓN DE AGREGACIÓN - EQUIPO N°2");
+
+        PersonalFarmacia encargada = new PersonalFarmacia("Dra. Maria Sanchéz Polo", "Químico Farmacéutico Titular");
+        PersonalFarmacia tecnico = new PersonalFarmacia("Luis Gomez", "Técnico en Farmacia - Dispensación");
+        PersonalFarmacia tecnica = new PersonalFarmacia("Elena Torres", "Técnica en Farmacia - Almacén");
+        
+        encargada.asignarSubordinado(tecnico);
+        encargada.asignarSubordinado(tecnica);
+        encargada.mostrarEnAmbosSentidos();
+        tecnico.mostrarEnAmbosSentidos();
+        tecnica.mostrarEnAmbosSentidos();
+    }  
 }

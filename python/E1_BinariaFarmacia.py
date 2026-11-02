@@ -11,17 +11,17 @@ class Medicamento:
         return f"[{self.__codigo}] {self.__nombre} - S/ {self.__precio:.2f}"
     
     # Metodos Getters
-    def get_codigo(self):
-        return self.__codigo
+    @property
+    def codigo(self): return self.__codigo
 
-    def get_nombre(self):
-        return self.__nombre
+    @property
+    def nombre(self): return self.__nombre
 
-    def get_precio(self):
-        return self.__precio
+    @property
+    def precio(self): return self.__precio
 
-    def get_cantidad(self):
-        return self.__cantidad
+    @property
+    def cantidad(self): return self.__cantidad
 
     def calularSubTotal(self):
         if(self.cantidad > 0):
@@ -30,7 +30,7 @@ class Medicamento:
             return 0.0
 
     def mostrarMedicamento(self):
-            print(f"{self.get_codigo()}: {self.get_nombre()} | cant: {self.get_cantidad()} | subtotal: S/{self.calularSubTotal():,.2f} ")
+            print(f"{self.__codigo()}: {self.__nombre()} | cant: {self.__cantidad()} | subtotal: S/{self.calularSubTotal():,.2f} ")
 
 
 # Clase principal que administra la lista
@@ -56,7 +56,9 @@ class CategoriaFarmacia:
         print(f"Total de medicamentos registrados: {self.contar_medicamentos()}")
 
 
-# Bloque principal de ejecución
+## =============================
+## BLOQUE PRINCIPAL DE EJECUCIÓN
+## =============================
 if __name__ == "__main__":
     # Impresión obligatoria con el nombre del equipo
     print("EJECUCIÓN: RELACIÓN BINARIA  - EQUIPO: N°2")

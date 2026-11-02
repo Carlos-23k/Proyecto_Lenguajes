@@ -24,11 +24,11 @@ class RegistroOperacionesFarmacia {
 }
 
 
-// PROGRAMA PRINCIPAL
+// ===========================================================
+// PROGRAMA PRINCIPAL QUE IMPRIME EL FUNCIONAMIENTO EN CONSOLA
+// ===========================================================
 public class E6_Singleton_Farmacia {
-
     public static void main(String[] args) {
-
         System.out.println("================================");
         System.out.println(" PATRON SINGLETON - FARMACIA");
         System.out.println(" EQUIPO N°2");

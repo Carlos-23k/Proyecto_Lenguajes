@@ -1,7 +1,5 @@
 
 from abc import ABC, abstractmethod
-
-
 # ==========================================
 # CLASE PADRE
 # ==========================================
@@ -17,7 +15,6 @@ class MedicamentoFarmaceutico(ABC):
     def mostrar_detalle(self):
         pass
 
-
 # ==========================================
 # SUBCLASE 1: MEDICAMENTO GENERICO
 # ==========================================
@@ -30,7 +27,6 @@ class MedicamentoGenerico(MedicamentoFarmaceutico):
         print("Nombre:", self.nombre)
         print("Precio: S/", self.precio)
 
-
 # ==========================================
 # SUBCLASE 2: MEDICAMENTO COMERCIAL
 # ==========================================
@@ -42,7 +38,6 @@ class MedicamentoComercial(MedicamentoFarmaceutico):
         print("Codigo:", self.codigo)
         print("Nombre:", self.nombre)
         print("Precio: S/", self.precio)
-
 
 # ==========================================
 # SUBCLASE 3: MEDICAMENTO CONTROLADO
@@ -57,7 +52,6 @@ class MedicamentoControlado(MedicamentoFarmaceutico):
         print("Precio: S/", self.precio)
         print("Requiere receta medica.")
 
-
 # ==========================================
 # CREADOR ABSTRACTO
 # ==========================================
@@ -67,7 +61,6 @@ class CreadorMedicamentos(ABC):
     @abstractmethod
     def crear_medicamento(self, tipo, codigo, nombre, precio):
         pass
-
 
 # ==========================================
 # FACTORY METHOD
@@ -85,18 +78,15 @@ class FarmaciaFactory(CreadorMedicamentos):
 
         elif tipo.lower() == "controlado":
             return MedicamentoControlado(codigo, nombre, precio)
-
         else:
             print("Tipo de medicamento no disponible.")
             return None
 
 
-# ==========================================
-# PROGRAMA PRINCIPAL
-# ==========================================
-
+## =============================
+## BLOQUE PRINCIPAL DE EJECUCIÓN
+## =============================
 if __name__ == "__main__":
-
     print("======================================")
     print(" FACTORY METHOD - FARMACIA")
     print(" EQUIPO N°2")
@@ -110,16 +100,13 @@ if __name__ == "__main__":
 
     # La fábrica crea los tres tipos de medicamentos
     m1 = fabrica.crear_medicamento(
-        "generico", "MED-001", "Paracetamol", 12.50
-    )
+        "generico", "MED-001", "Paracetamol", 12.50)
 
     m2 = fabrica.crear_medicamento(
-        "comercial", "MED-002", "Panadol", 18.00
-    )
+        "comercial", "MED-002", "Panadol", 18.00)
 
     m3 = fabrica.crear_medicamento(
-        "controlado", "MED-003", "Medicamento Especial", 25.00
-    )
+        "controlado", "MED-003", "Medicamento Especial", 25.00)
 
     # Registrar los medicamentos creados
     for medicamento in [m1, m2, m3]:
@@ -135,6 +122,3 @@ if __name__ == "__main__":
 
     print("\nTotal de medicamentos creados:", len(medicamentos))
 
-    print("\n======================================")
-    print(" FIN DE LA EJECUCION")
-    print("======================================")
