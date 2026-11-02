@@ -5,16 +5,13 @@ class Venta:
         self.__numeroVenta = nVenta
         self.__medicamentos = []
 
-
      #Metodos Getters   
     @property
     def numeroVenta(self): return self.__numeroVenta
 
-
     def agregaMedicamento(self, codigo, nombre, precio, cantidad):
          medicamento = Medicamento(codigo, nombre, precio, cantidad)
          self.__medicamentos.append(medicamento)
-
 
     def mostrarVenta(self):
         total = 0.0
@@ -26,7 +23,6 @@ class Venta:
         print("-" * 30)
         print(f"TOTAL A PAGAR:    S/{total:,.2f} ")    
         print("-" * 30) 
-
 
 ## =============================
 ## BLOQUE PRINCIPAL DE EJECUCIÓN

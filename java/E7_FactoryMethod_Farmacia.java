@@ -5,9 +5,7 @@ import java.util.List;
 // ======================================
 // CLASE PADRE
 // ======================================
-
 abstract class MedicamentoFarmaceutico {
-
     protected String codigo;
     protected String nombre;
     protected double precio;
@@ -22,13 +20,11 @@ abstract class MedicamentoFarmaceutico {
     public abstract void mostrarDetalle();
 }
 
-
 // ======================================
 // SUBCLASE 1: GENERICO
 // ======================================
 
 class MedicamentoGenerico extends MedicamentoFarmaceutico {
-
     public MedicamentoGenerico(
             String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
@@ -43,13 +39,11 @@ class MedicamentoGenerico extends MedicamentoFarmaceutico {
     }
 }
 
-
 // ======================================
 // SUBCLASE 2: COMERCIAL
 // ======================================
 
 class MedicamentoComercial extends MedicamentoFarmaceutico {
-
     public MedicamentoComercial(
             String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
@@ -70,7 +64,6 @@ class MedicamentoComercial extends MedicamentoFarmaceutico {
 // ======================================
 
 class MedicamentoControlado extends MedicamentoFarmaceutico {
-
     public MedicamentoControlado(
             String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
@@ -90,7 +83,6 @@ class MedicamentoControlado extends MedicamentoFarmaceutico {
 // ======================================
 
 abstract class CreadorMedicamentos {
-
     public abstract MedicamentoFarmaceutico crearMedicamento(
             String tipo, String codigo, String nombre, double precio);
 }

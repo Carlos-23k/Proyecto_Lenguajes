@@ -1,6 +1,5 @@
    
 class RegistroOperacionesFarmacia {
-
     // Variable que almacena la unica instancia
     private static RegistroOperacionesFarmacia instancia;
 
@@ -22,7 +21,6 @@ class RegistroOperacionesFarmacia {
         System.out.println("Operacion registrada: " + descripcion);
     }
 }
-
 
 // ===========================================================
 // PROGRAMA PRINCIPAL QUE IMPRIME EL FUNCIONAMIENTO EN CONSOLA

@@ -11,6 +11,7 @@ class PersonalFarmacia:
     # Metodos Getters    
     @property
     def nombre(self) -> str: return self.__nombre
+    
     @property
     def cargo(self) -> str: return self.__cargo
 

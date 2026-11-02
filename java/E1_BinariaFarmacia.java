@@ -73,8 +73,6 @@ class Medicamento {
     }       
 }
 
-
-
 // ===========================================================
 // PROGRAMA PRINCIPAL QUE IMPRIME EL FUNCIONAMIENTO EN CONSOLA
 // ===========================================================
@@ -92,6 +90,5 @@ public class E1_BinariaFarmacia{
         analgesicos.agregarFarmaco(m2);
         analgesicos.agregarFarmaco(m3);
         analgesicos.listarMedicamentos();
-     
     }
 }

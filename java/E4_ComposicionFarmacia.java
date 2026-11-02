@@ -57,7 +57,6 @@ class Medicamento {
     public double getPrecio() { return precio; }
     public int getCantidad() { return cantidad; }
 
-
     public String getDetalle() {
         return "[" + getCodigo() + "] " + getNombre() + " - S/ " + String.format("%.2f", getPrecio());
     }

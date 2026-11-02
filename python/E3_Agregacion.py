@@ -28,7 +28,7 @@ class Medicamento:
             return 0.0
 
     def mostrarMedicamento(self):
-            print(f"{self.codigo}: {self.nombre} | cant: {self.cantidad} | subtotal: S/{self.calularSubTotal():,.2f} ")
+        print(f"{self.codigo}: {self.nombre} | cant: {self.cantidad} | subtotal: S/{self.calularSubTotal():,.2f} ")
 
 
 # Clase principal que administra la lista
@@ -52,7 +52,6 @@ class CategoriaFarmacia:
         for m in self.__medicamentos:
             print(f"  -> {m.get_detalle()}")
         print(f"Total de medicamentos registrados: {self.contar_medicamentos()}")
-
 
 ## =============================
 ## BLOQUE PRINCIPAL DE EJECUCIÓN

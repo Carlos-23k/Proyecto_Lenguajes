@@ -19,7 +19,7 @@ class Medicamento:
 
     @property
     def precio(self): return self.__precio
-
+    
     @property
     def cantidad(self): return self.__cantidad
 
