@@ -60,9 +60,9 @@ public class E2_ReflexivaFramacia {
         
         System.out.println("EJECUCIÓN: RELACIÓN REFLEXIVA- EQUIPO N°2");
 
-        PersonalFarmacia encargada = new PersonalFarmacia("Dra. Maria Sanchéz Polo", "Químico Farmacéutico Titular");
+        PersonalFarmacia encargada = new PersonalFarmacia("Dra. Elena Vargas", "Químico Farmacéutico Titular");
         PersonalFarmacia tecnico = new PersonalFarmacia("Luis Gomez", "Técnico en Farmacia - Dispensación");
-        PersonalFarmacia tecnica = new PersonalFarmacia("Elena Torres", "Técnica en Farmacia - Almacén");
+        PersonalFarmacia tecnica = new PersonalFarmacia("Maria Torres", "Técnica en Farmacia - Almacén");
         
         encargada.asignarSubordinado(tecnico);
         encargada.asignarSubordinado(tecnica);
