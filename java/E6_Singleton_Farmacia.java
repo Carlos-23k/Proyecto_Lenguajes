@@ -1,4 +1,4 @@
-   
+
 class RegistroOperacionesFarmacia {
     // Variable que almacena la unica instancia
     private static RegistroOperacionesFarmacia instancia;
@@ -9,7 +9,7 @@ class RegistroOperacionesFarmacia {
     }
 
     // Metodo para obtener la instancia unica
-    public static synchronized RegistroOperacionesFarmacia getInstance() {
+    public static RegistroOperacionesFarmacia getInstance() {
         if (instancia == null) {
             instancia = new RegistroOperacionesFarmacia();
         }
@@ -28,8 +28,7 @@ class RegistroOperacionesFarmacia {
 public class E6_Singleton_Farmacia {
     public static void main(String[] args) {
         System.out.println("================================");
-        System.out.println(" PATRON SINGLETON - FARMACIA");
-        System.out.println(" EQUIPO N°2");
+        System.out.println(" PATRON SINGLETON - EQUIPO N°2");
         System.out.println("================================");
 
         // Primera llamada

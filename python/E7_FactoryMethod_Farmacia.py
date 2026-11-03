@@ -25,7 +25,7 @@ class MedicamentoGenerico(MedicamentoFarmaceutico):
         print("Tipo: Medicamento Generico")
         print("Codigo:", self.codigo)
         print("Nombre:", self.nombre)
-        print("Precio: S/", self.precio)
+        print(f"Precio: S/ {self.precio:,.2f}")
 
 # ==========================================
 # SUBCLASE 2: MEDICAMENTO COMERCIAL
@@ -37,7 +37,7 @@ class MedicamentoComercial(MedicamentoFarmaceutico):
         print("Tipo: Medicamento Comercial")
         print("Codigo:", self.codigo)
         print("Nombre:", self.nombre)
-        print("Precio: S/", self.precio)
+        print(f"Precio: S/ {self.precio:,.2f}")
 
 # ==========================================
 # SUBCLASE 3: MEDICAMENTO CONTROLADO
@@ -49,7 +49,7 @@ class MedicamentoControlado(MedicamentoFarmaceutico):
         print("Tipo: Medicamento Controlado")
         print("Codigo:", self.codigo)
         print("Nombre:", self.nombre)
-        print("Precio: S/", self.precio)
+        print(f"Precio: S/ {self.precio:,.2f}")
         print("Requiere receta medica.")
 
 # ==========================================

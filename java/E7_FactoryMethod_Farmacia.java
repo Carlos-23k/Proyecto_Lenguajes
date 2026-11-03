@@ -10,8 +10,7 @@ abstract class MedicamentoFarmaceutico {
     protected String nombre;
     protected double precio;
 
-    public MedicamentoFarmaceutico(
-            String codigo, String nombre, double precio) {
+    public MedicamentoFarmaceutico(String codigo, String nombre, double precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
@@ -25,8 +24,7 @@ abstract class MedicamentoFarmaceutico {
 // ======================================
 
 class MedicamentoGenerico extends MedicamentoFarmaceutico {
-    public MedicamentoGenerico(
-            String codigo, String nombre, double precio) {
+    public MedicamentoGenerico(String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
     }
 
@@ -44,8 +42,7 @@ class MedicamentoGenerico extends MedicamentoFarmaceutico {
 // ======================================
 
 class MedicamentoComercial extends MedicamentoFarmaceutico {
-    public MedicamentoComercial(
-            String codigo, String nombre, double precio) {
+    public MedicamentoComercial(String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
     }
 
@@ -64,8 +61,7 @@ class MedicamentoComercial extends MedicamentoFarmaceutico {
 // ======================================
 
 class MedicamentoControlado extends MedicamentoFarmaceutico {
-    public MedicamentoControlado(
-            String codigo, String nombre, double precio) {
+    public MedicamentoControlado(String codigo, String nombre, double precio) {
         super(codigo, nombre, precio);
     }
 
@@ -83,8 +79,7 @@ class MedicamentoControlado extends MedicamentoFarmaceutico {
 // ======================================
 
 abstract class CreadorMedicamentos {
-    public abstract MedicamentoFarmaceutico crearMedicamento(
-            String tipo, String codigo, String nombre, double precio);
+    public abstract MedicamentoFarmaceutico crearMedicamento(String tipo, String codigo, String nombre, double precio);
 }
 
 // ======================================
@@ -93,11 +88,9 @@ abstract class CreadorMedicamentos {
 
 class FarmaciaFactory extends CreadorMedicamentos {
     @Override
-    public MedicamentoFarmaceutico crearMedicamento(
-            String tipo, String codigo, String nombre, double precio) {
+    public MedicamentoFarmaceutico crearMedicamento(String tipo, String codigo, String nombre, double precio) {
 
         switch (tipo.toLowerCase()) {
-
             case "generico":
                 return new MedicamentoGenerico(codigo, nombre, precio);
 
@@ -123,8 +116,7 @@ public class E7_FactoryMethod_Farmacia {
     public static void main(String[] args) {
 
         System.out.println("==================================");
-        System.out.println(" FACTORY METHOD - FARMACIA");
-        System.out.println(" EQUIPO N°2");
+        System.out.println(" FACTORY METHOD - EQUIPO N°2");
         System.out.println("==================================");
 
         // Crear la fabrica
